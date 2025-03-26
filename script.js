@@ -32,6 +32,7 @@ function dailyClock(clock, hand, hourDisplay) {
     let lastAngle = 0;
 
     clock.addEventListener("mousedown", () => (isDragging = true));
+    -0;
 
     document.addEventListener("mouseup", () => (isDragging = false));
 
@@ -111,6 +112,7 @@ let ultimoClicado = null;
 function lastClickOptionAgenda() {
     $dailyOptionsAgenda.forEach((element) => {
         element.addEventListener("click", () => {
+            $dailyScheduled.forEach((b) => b.classList.remove("selected"));
             ultimoClicado = element;
         });
     });
@@ -285,17 +287,17 @@ function agendaElementSelect() {
     });
 }
 
-let dataHourWork = `${0}h`;
+let dataHourWork;
 let dataHandHourStyleWork;
-let dataHourPlay = `${0}h`;
+let dataHourPlay;
 let dataHandHourStylePlay;
-let dataHourStudy = `${0}h`;
+let dataHourStudy;
 let dataHandHourStyleStudy;
-let dataHourExercise = `${0}h`;
+let dataHourExercise;
 let dataHandHourStyleExercise;
-let dataHourSocial = `${0}h`;
+let dataHourSocial;
 let dataHandHourStyleSocial;
-let dataHourSelfCare = `${0}h`;
+let dataHourSelfCare;
 let dataHandHourStyleSelfCare;
 
 function SelectedHandMovAgenda() {
@@ -381,7 +383,7 @@ function samePlaceResetHandHour() {
     $dailyScheduled.forEach((element) => {
         element.addEventListener("click", () => {
             if (selectedElement.dataset.id === "work") {
-                const dailyScheduledHourWorkResult = document.getElementById(
+                let dailyScheduledHourWorkResult = document.getElementById(
                     "daily-scheduled-hour-work"
                 );
                 if (dailyScheduledHourWorkResult.innerText === "0h") {
@@ -390,10 +392,11 @@ function samePlaceResetHandHour() {
                         "translateX(-50%) rotate(0deg)";
                     return;
                 }
+                dailyScheduledHourWorkResult.innerText = dataHourWork;
                 $dailyClockHourDisplay.textContent = dataHourWork;
                 $dailyHand.style.transform = dataHandHourStyleWork;
             } else if (selectedElement.dataset.id === "play") {
-                const dailyScheduledHourPlayResult = document.getElementById(
+                let dailyScheduledHourPlayResult = document.getElementById(
                     "daily-scheduled-hour-play"
                 );
                 if (dailyScheduledHourPlayResult.innerText === "0h") {
@@ -405,7 +408,8 @@ function samePlaceResetHandHour() {
                 $dailyClockHourDisplay.textContent = dataHourPlay;
                 $dailyHand.style.transform = dataHandHourStylePlay;
             } else if (selectedElement.dataset.id === "study") {
-                const dailyScheduledHourStudyResult = document.getElementById(
+                console.log(dataHourStudy);
+                let dailyScheduledHourStudyResult = document.getElementById(
                     "daily-scheduled-hour-study"
                 );
                 if (dailyScheduledHourStudyResult.innerText === "0h") {
@@ -414,21 +418,23 @@ function samePlaceResetHandHour() {
                         "translateX(-50%) rotate(0deg)";
                     return;
                 }
+                dailyScheduledHourStudyResult = dataHourStudy;
                 $dailyClockHourDisplay.textContent = dataHourStudy;
                 $dailyHand.style.transform = dataHandHourStyleStudy;
             } else if (selectedElement.dataset.id === "exercise") {
-                const dailyScheduledHourExerciseResult =
-                    document.getElementById("daily-scheduled-hour-exercise");
+                let dailyScheduledHourExerciseResult = document.getElementById(
+                    "daily-scheduled-hour-exercise"
+                );
                 if (dailyScheduledHourExerciseResult.innerText === "0h") {
                     $dailyClockHourDisplay.textContent = "0h";
                     $dailyHand.style.transform =
                         "translateX(-50%) rotate(0deg)";
                     return;
                 }
-                $dailyClockHourDisplay.textContent = dataHourWork;
-                $dailyHand.style.transform = dataHandHourStyleWork;
+                $dailyClockHourDisplay.textContent = dataHourExercise;
+                $dailyHand.style.transform = dataHandHourStyleExercise;
             } else if (selectedElement.dataset.id === "social") {
-                const dailyScheduledHourSocialResult = document.getElementById(
+                let dailyScheduledHourSocialResult = document.getElementById(
                     "daily-scheduled-hour-social"
                 );
                 if (dailyScheduledHourSocialResult.innerText === "0h") {
@@ -437,19 +443,22 @@ function samePlaceResetHandHour() {
                         "translateX(-50%) rotate(0deg)";
                     return;
                 }
-                $dailyClockHourDisplay.textContent = dataHourWork;
-                $dailyHand.style.transform = dataHandHourStyleWork;
+                dailyScheduledHourSocialResult = dataHourSocial;
+                $dailyClockHourDisplay.textContent = dataHourSocial;
+                $dailyHand.style.transform = dataHandHourStyleSocial;
             } else if (selectedElement.dataset.id === "self-care") {
-                const dailyScheduledHourSelfCareResult =
-                    document.getElementById("daily-scheduled-hour-self-care");
+                let dailyScheduledHourSelfCareResult = document.getElementById(
+                    "daily-scheduled-hour-self-care"
+                );
                 if (dailyScheduledHourSelfCareResult.innerText === "0h") {
                     $dailyClockHourDisplay.textContent = "0h";
                     $dailyHand.style.transform =
                         "translateX(-50%) rotate(0deg)";
                     return;
                 }
-                $dailyClockHourDisplay.textContent = dataHourWork;
-                $dailyHand.style.transform = dataHandHourStyleWork;
+                dailyScheduledHourSelfCareResult = dataHourSelfCare;
+                $dailyClockHourDisplay.textContent = dataHourSelfCare;
+                $dailyHand.style.transform = dataHandHourStyleSelfCare;
             }
         });
     });
@@ -492,7 +501,7 @@ function clickDailyOptionsMoveHandHour() {
                     if (element.dataset.id === "study") {
                         dailyScheduledHourStudy.textContent = `${dailyHours}h`;
                         dataHandHourStyleStudy = $dailyHand.style.transform;
-                        dataHourPlay = `${dailyHours}h`;
+                        dataHourStudy = `${dailyHours}h`;
                     }
                     element.classList.remove("selected");
                     break;

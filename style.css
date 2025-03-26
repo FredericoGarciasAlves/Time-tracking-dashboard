@@ -148,6 +148,13 @@
     scrollbar-width: none;
 }
 
+.main .select-hours .box-date .box-result .results .p-hours,
+.main .select-hours .box-date .box-result .results .p-hours .span-hours {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+}
+
 /* 3) Para Chrome, Safari, Opera */
 .main .select-hours .box-date .box-result::-webkit-scrollbar {
     width: 0px;
