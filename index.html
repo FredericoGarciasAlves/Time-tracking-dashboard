@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Time-tracking-dashboard</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="global.css" />
+        <link rel="stylesheet" href="responsive.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        />
+    </head>
+    <body>
+        <main class="main">
+            <section class="select-hours">
+                <div class="box-date box-date-daily">
+                    <h2 class="box-date-title">Daily</h2>
+
+                    <div class="box-select">
+                        <div class="category">Category</div>
+                        <ul
+                            class="select-option"
+                            id="daily-select-option"
+                            style="display: none"
+                        >
+                            <li
+                                class="options option-work daily-options-agenda"
+                                id="daily-option-work"
+                            >
+                                Work
+                            </li>
+                            <li
+                                class="options option-plays daily-options-agenda"
+                                id="daily-option-play"
+                            >
+                                Play
+                            </li>
+                            <li
+                                class="options option-study daily-options-agenda"
+                                id="daily-option-study"
+                            >
+                                Study
+                            </li>
+                            <li
+                                class="options option-exercise daily-options-agenda"
+                                id="daily-option-exercise"
+                            >
+                                Exercise
+                            </li>
+                            <li
+                                class="options option-social daily-options-agenda"
+                                id="daily-option-social"
+                            >
+                                Social
+                            </li>
+                            <li
+                                class="options option-self-care daily-options-agenda"
+                                id="daily-option-self-care"
+                            >
+                                Self Care
+                            </li>
+                            <i class="bi bi-x-circle" id="daily-icon-close"></i>
+                        </ul>
+                    </div>
+
+                    <div class="clock-container">
+                        <div class="clock" id="daily-clock">
+                            <div class="hand" id="daily-hand"></div>
+                            <div
+                                class="hour-display"
+                                id="daily-clock-hour-display"
+                            >
+                                0h
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="box-result">
+                        <div class="results daily-scheduled box-one"></div>
+                        <div class="results daily-scheduled"></div>
+                        <div class="results daily-scheduled"></div>
+                        <div class="results daily-scheduled"></div>
+                        <div class="results daily-scheduled"></div>
+                        <div class="results daily-scheduled"></div>
+                    </div>
+                </div>
+                <div class="box-date box-date-weekly">
+                    <h2 class="box-date-title">Weekly</h2>
+
+                    <div class="box-select">
+                        <div class="category">Category</div>
+                        <ul
+                            class="select-option"
+                            id="weekly-select-option"
+                            style="display: none"
+                        >
+                            <li
+                                class="options option-work"
+                                id="weekly-option-work"
+                            >
+                                Work
+                            </li>
+                            <li
+                                class="options option-plays"
+                                id="weekly-option-play"
+                            >
+                                Play
+                            </li>
+                            <li
+                                class="options option-study"
+                                id="weekly-option-study"
+                            >
+                                Study
+                            </li>
+                            <li
+                                class="options option-exercise"
+                                id="weekly-option-exercise"
+                            >
+                                Exercise
+                            </li>
+                            <li
+                                class="options option-social"
+                                id="weeklydaily-option-social"
+                            >
+                                Social
+                            </li>
+                            <li
+                                class="options option-self-care"
+                                id="weekly-option-self-care"
+                            >
+                                Self Care
+                            </li>
+                            <i class="bi bi-x-circle" id="weekly-close"></i>
+                        </ul>
+                    </div>
+                    <div class="clock-container">
+                        <div class="clock" id="weekly-clock">
+                            <div class="hand" id="weekly-hand"></div>
+                            <div class="hour-display" id="weekly-hour-display">
+                                0h
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-result">
+                        <div class="results weekly-results box-one"></div>
+                        <div class="results weekly-results"></div>
+                        <div class="results weekly-results"></div>
+                        <div class="results weekly-results"></div>
+                        <div class="results weekly-results"></div>
+                        <div class="results weekly-results"></div>
+                    </div>
+                </div>
+                <div class="box-date box-date-monthly">
+                    <h2 class="box-date-title">Monthly</h2>
+
+                    <div class="box-select">
+                        <div class="category">Category</div>
+                        <ul
+                            class="select-option"
+                            id="monthly-select-option"
+                            style="display: none"
+                        >
+                            <li
+                                class="options option-work"
+                                id="monthly-option-work"
+                            >
+                                Work
+                            </li>
+                            <li
+                                class="options option-plays"
+                                id="monthly-option-play"
+                            >
+                                Play
+                            </li>
+                            <li
+                                class="options option-study"
+                                id="monthly-option-study"
+                            >
+                                Study
+                            </li>
+                            <li
+                                class="options option-exercise"
+                                id="monthly-option-exercise"
+                            >
+                                Exercise
+                            </li>
+                            <li
+                                class="options option-social"
+                                id="monthly-option-social"
+                            >
+                                Social
+                            </li>
+                            <li
+                                class="options option-self-care"
+                                id="monthly-option-self-care"
+                            >
+                                Self Care
+                            </li>
+                            <i class="bi bi-x-circle" id="monthly-close"></i>
+                        </ul>
+                    </div>
+                    <div class="clock-container">
+                        <div class="clock" id="monthly-clock">
+                            <div class="hand" id="monthly-hand"></div>
+                            <div class="hour-display" id="monthly-hour-display">
+                                0h
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-result">
+                        <div class="results monthly-results box-one"></div>
+                        <div class="results monthly-results"></div>
+                        <div class="results monthly-results"></div>
+                        <div class="results monthly-results"></div>
+                        <div class="results monthly-results"></div>
+                        <div class="results monthly-results"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grid-dashboard">
+                <div class="grid-perfil">
+                    <div class="box-perfil">
+                        <img
+                            src="./assets/image/image-jeremy.png"
+                            alt="Image perfil"
+                            class="img-perfil"
+                        />
+                        <p class="report">
+                            Report for
+                            <span class="report-name">Jeremy Robson</span>
+                        </p>
+                    </div>
+                    <div class="box-date">
+                        <p class="daily date">Daily</p>
+                        <p class="Weekly date">Weekly</p>
+                        <p class="Monthly date">Monthly</p>
+                    </div>
+                </div>
+                <div class="grid-hours work">
+                    <img
+                        src="./assets/image/icon-work.svg"
+                        alt="Icon work"
+                        class="icon-dashboard"
+                    />
+                    <div class="box-hours">
+                        <div class="box-hours-header">
+                            <p class="p-hours-header">Work</p>
+                            <img
+                                src="./assets/image/icon-ellipsis.svg"
+                                alt="Icon ellipsis"
+                                class="icon-hours-header"
+                            />
+                        </div>
+                        <h3 class="hours">32hrs</h3>
+                        <p class="box-p">Last Week - 36hrs</p>
+                    </div>
+                </div>
+                <div class="grid-hours play">
+                    <img
+                        src="./assets/image/icon-play.svg"
+                        alt="Icon play"
+                        class="icon-dashboard icon-play"
+                    />
+                    <div class="box-hours">
+                        <div class="box-hours-header">
+                            <p class="p-hours-header">Play</p>
+                            <img
+                                src="./assets/image/icon-ellipsis.svg"
+                                alt="Icon ellipsis"
+                                class="icon-hours-header"
+                            />
+                        </div>
+                        <h3 class="hours">32hrs</h3>
+                        <p class="box-p">Last Week - 36hrs</p>
+                    </div>
+                </div>
+                <div class="grid-hours study">
+                    <img
+                        src="./assets/image/icon-study.svg"
+                        alt="Icon study"
+                        class="icon-dashboard"
+                    />
+                    <div class="box-hours">
+                        <div class="box-hours-header">
+                            <p class="p-hours-header">Study</p>
+                            <img
+                                src="./assets/image/icon-ellipsis.svg"
+                                alt="Icon ellipsis"
+                                class="icon-hours-header"
+                            />
+                        </div>
+                        <h3 class="hours">32hrs</h3>
+                        <p class="box-p">Last Week - 36hrs</p>
+                    </div>
+                </div>
+                <div class="grid-hours exercise">
+                    <img
+                        src="./assets/image/icon-exercise.svg"
+                        alt="Icon exercise"
+                        class="icon-dashboard icon-exercise"
+                    />
+                    <div class="box-hours">
+                        <div class="box-hours-header">
+                            <p class="p-hours-header">Exercise</p>
+                            <img
+                                src="./assets/image/icon-ellipsis.svg"
+                                alt="Icon ellipsis"
+                                class="icon-hours-header"
+                            />
+                        </div>
+                        <h3 class="hours">32hrs</h3>
+                        <p class="box-p">Last Week - 36hrs</p>
+                    </div>
+                </div>
+                <div class="grid-hours social">
+                    <img
+                        src="./assets/image/icon-social.svg"
+                        alt="Icon social"
+                        class="icon-dashboard"
+                    />
+                    <div class="box-hours">
+                        <div class="box-hours-header">
+                            <p class="p-hours-header">Social</p>
+                            <img
+                                src="./assets/image/icon-ellipsis.svg"
+                                alt="Icon ellipsis"
+                                class="icon-hours-header"
+                            />
+                        </div>
+                        <h3 class="hours">32hrs</h3>
+                        <p class="box-p">Last Week - 36hrs</p>
+                    </div>
+                </div>
+                <div class="grid-hours self-care">
+                    <img
+                        src="./assets/image/icon-self-care.svg"
+                        alt="Icon self care"
+                        class="icon-dashboard"
+                    />
+                    <div class="box-hours">
+                        <div class="box-hours-header">
+                            <p class="p-hours-header">Self Care</p>
+                            <img
+                                src="./assets/image/icon-ellipsis.svg"
+                                alt="Icon ellipsis"
+                                class="icon-hours-header"
+                            />
+                        </div>
+                        <h3 class="hours">32hrs</h3>
+                        <p class="box-p">Last Week - 36hrs</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="./dailyAgenda.js"></script>
+        <script src="./weeklyAgenda.js"></script>
+        <script src="./monthlyAgenda.js"></script>
+        <script src="./server.js"></script>
+        <script src="./script.js"></script>
+    </body>
+</html>
