@@ -97,42 +97,45 @@
                             style="display: none"
                         >
                             <li
-                                class="options option-work"
+                                class="options option-work weekly-options-agenda"
                                 id="weekly-option-work"
                             >
                                 Work
                             </li>
                             <li
-                                class="options option-plays"
+                                class="options option-plays weekly-options-agenda"
                                 id="weekly-option-play"
                             >
                                 Play
                             </li>
                             <li
-                                class="options option-study"
+                                class="options option-study weekly-options-agenda"
                                 id="weekly-option-study"
                             >
                                 Study
                             </li>
                             <li
-                                class="options option-exercise"
+                                class="options option-exercise weekly-options-agenda"
                                 id="weekly-option-exercise"
                             >
                                 Exercise
                             </li>
                             <li
-                                class="options option-social"
+                                class="options option-social weekly-options-agenda"
                                 id="weeklydaily-option-social"
                             >
                                 Social
                             </li>
                             <li
-                                class="options option-self-care"
+                                class="options option-self-care weekly-options-agenda"
                                 id="weekly-option-self-care"
                             >
                                 Self Care
                             </li>
-                            <i class="bi bi-x-circle" id="weekly-close"></i>
+                            <i
+                                class="bi bi-x-circle"
+                                id="weekly-icon-close"
+                            ></i>
                         </ul>
                     </div>
                     <div class="clock-container">
@@ -144,12 +147,12 @@
                         </div>
                     </div>
                     <div class="box-result">
-                        <div class="results weekly-results box-one"></div>
-                        <div class="results weekly-results"></div>
-                        <div class="results weekly-results"></div>
-                        <div class="results weekly-results"></div>
-                        <div class="results weekly-results"></div>
-                        <div class="results weekly-results"></div>
+                        <div class="results weekly-scheduled box-one"></div>
+                        <div class="results weekly-scheduled"></div>
+                        <div class="results weekly-scheduled"></div>
+                        <div class="results weekly-scheduled"></div>
+                        <div class="results weekly-scheduled"></div>
+                        <div class="results weekly-scheduled"></div>
                     </div>
                 </div>
                 <div class="box-date box-date-monthly">
@@ -204,7 +207,10 @@
                     <div class="clock-container">
                         <div class="clock" id="monthly-clock">
                             <div class="hand" id="monthly-hand"></div>
-                            <div class="hour-display" id="monthly-hour-display">
+                            <div
+                                class="hour-display"
+                                id="monthly-clock-hour-display"
+                            >
                                 0h
                             </div>
                         </div>
